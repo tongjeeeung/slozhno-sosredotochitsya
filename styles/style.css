@@ -331,11 +331,6 @@
     min-height: 1024px;
   }
 
-  .header {
-    max-width: 768px;
-    min-height: 1024px;
-  }
-
   .header__theme-menu-list {
     display: flex;
     flex-direction: column;
@@ -353,8 +348,6 @@
 
   .header {
     padding: 10px;
-    min-width: 375px;
-    min-height: 668px;
   }
 
   .header__theme-menu-list {

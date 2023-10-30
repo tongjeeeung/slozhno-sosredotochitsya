@@ -1,5 +1,438 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  max-width: 1024px;
+  min-height: 768px;
+  color: var(--border-color);
+  font-family: var(--text-font);
+  background-image: var(--page-bg-img);
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  padding: 20px;
+  background-image: var(--header-bg-img);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+
+.header__theme-menu {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, fit-content(100%));
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  cursor: pointer; 
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--border-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--border-color);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--border-color);
+}
+
+.header__theme-menu-title {
+  font-size: var(--title-size);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--shadow-color);
+  margin-block-start: 20%;
+  margin-inline-start: -2%;
+}
+
+.header__theme-menu::after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-block-start: 1px solid var(--border-color);
+  border-inline-end: 1px solid var(--border-color);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.header__theme-menu::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-block-end: 1px solid var(--border-color);
+  border-inline-start: 1px solid var(--border-color);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.header__theme-menu-text {
+  inline-size: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  margin-block: 8%;
+  justify-self: end;
+}
+
+.title-decor {
+  color: var(--decor-color);
+  background-color: var(--decor-bg-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.header__theme-menu-rec {
+  position: absolute;
+  display: flex;
+  top: 20px;
+  right: 50px;
+  text-transform: uppercase;
+}
+
+.header__theme-menu-rec::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  top: 6px;
+  right: -20px;
+  background-color: var(--border-color);
+  background-clip: content-box;
+  border-radius: 50%;
+  filter: drop-shadow(0px 0px 4px var(--border-color));
+  border-block-start: 1px solid var(--border-color);
+  border-inline-end: 1px solid var(--border-color);
+}
+
+
+/*------------------------end-header-----------------------*/
+
+.main-page {
+  display: grid;
+  gap: 80px;
+}
+
+.question {
+  padding: 60px 20px 80px;
+  display: grid;
+  grid-template-columns: fit-content(32%) fit-content(68%);
+  gap: 20px;
+}
+
+.main-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.question__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  color: var(--page-text-color);
+}
+
+.width-limit {
+  inline-size: 32%;
+}
+
+.text-link {
+  text-shadow: 2px 2px 0 var(--link-shadow);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  border-block-end: 1px solid var(--decor-color);
+}
+
+.text-link:focus {
+  outline: none;
+}
+
+.text-link:focus-visible {
+  border: 1px solid var(--page-text-color);
+}
+
+/*----------------------end-question---------------------*/
+
+.answer {
+  padding-inline: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.answer__info {
+  display: grid;
+  grid-template-columns: repeat(3, fit-content(32%));
+  grid-template-rows: repeat(2, min-content);
+  row-gap: 10px;
+  column-gap: 20px;
+  grid-auto-flow: column;
+}
+
+/*-------------------------end-answer----------------------*/
+
+.solution {
+  padding-inline: 20px;
+  display: grid;
+  grid-template-columns: fit-content(32%) fit-content(68%);
+  gap: 20px;
+}
+
+.solution__info {
+  display: grid;
+  gap: 10px;
+}
+
+.solution__info .title-decor:first-child {
+  margin-block-end: 10px;
+}
+
+.main-text:not(:last-of-type) {
+  margin-block-end: 10px;
+}
+
+.main-title + .main-title{
+  margin-block-end: 20px;
+}
+
+/*-------------------end-solution------------------------*/
+
+.images {
+  padding: 0 20px 60px;
+  display: grid;
+  gap: 20px;
+}
+
+.images__info {
+  display: grid;
+  grid-template-columns: repeat(3, fit-content(32%));
+  grid-template-rows: repeat(3, fit-content(32%));
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.first {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.second {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.third {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.foor {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.five {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+/*--------------------end-images------------------------*/
+
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1024px;
+  min-height: 768px;
+  position: relative;
+}
+
+.footer-title {
+  font-size: var(--title-size);
+  color: var(--title-color);
+  text-shadow: 2px 2px 0 var(--shadow-color);
+  
+}
+
+.footer-title::after {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-block-start: 1px solid var(--border-color);
+  border-inline-end: 1px solid var(--border-color);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.footer-title::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-block-end: 1px solid var(--border-color);
+  border-inline-start: 1px solid var(--border-color);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+@media (768px <= width <= 1024px) {
+  .page {
+    max-width: 768px;
+    min-height: 1024px;
+  }
+
+  .header {
+    max-width: 768px;
+    min-height: 1024px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: end;
+    margin-block-start: 16%;
+  }
+}
+
+@media (width < 768px) {
+  .page {
+    min-width: 375px;
+    min-height: 668px;
+  }
+
+  .header {
+    padding: 10px;
+    min-width: 375px;
+    min-height: 668px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: end;
+    margin-block-start: 16%;
+    margin-inline-end: 10px;
+  }
+
+  .header__theme-menu-text {
+    inline-size: 100%;
+  }
+
+  .main-page {
+    gap: 40px;
+  }
+
+  .question {
+    padding: 0 10px 50px;
+    grid-template-rows: fit-content(32%) fit-content(68%);
+    grid-template-columns: fit-content(100%);
+  }
+
+  .answer {
+    padding-inline: 20px;
+  }
+
+  .answer__info {
+    grid-template-columns: repeat(1,fit-content(100%));
+    grid-template-rows: repeat(2, min-content);
+    grid-auto-flow: row;
+  }
+
+  .solution {
+    padding-inline: 10px;
+    grid-template-columns: fit-content(100%);
+    grid-template-rows: fit-content(32%) fit-content(68%);
+  }
+
+  .images {
+    padding: 0 10px 40px;
+  }
+
+  .images__info {
+    grid-template-columns: fit-content(100%);
+    grid-template-rows: repeat(auto-fit, fit-content(100%));
+  }
+
+  .first {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  
+  .second {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  
+  .third {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  
+  .foor {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  
+  .five {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .footer {
+    padding: 10px;
+    min-width: 375px;
+    min-height: 668px;
+  }
 }

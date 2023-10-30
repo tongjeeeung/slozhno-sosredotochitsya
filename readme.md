@@ -1,1 +1,1 @@
-https://github.com/tongjeeeung/slozhno-sosredotochitsya
+https://github.com/tongjeeeung/slozhno-sosredotochitsy

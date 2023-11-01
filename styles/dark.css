@@ -18,8 +18,11 @@
   --page-text-color: #F1B2CE;;
   --page-bg-color: #000028;
   --link-shadow:  #FF0070;
-  --text-font: 'IBM Plex Mono', serif;
+  --hover-color: rgb(255, 0, 112, 0.40);
+  --text-font: 'IBM Plex Mono', monospace;
   --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --page-bg-img: url(/images/cover-image-dark.png);
   --header-bg-img: url(/images/cover-image.png);
+  --hidden-owerflow: visible;
+  --hidden-const: auto;
 }
